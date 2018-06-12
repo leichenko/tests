@@ -1,36 +1,198 @@
-<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" data-apikey="650a594b7f08674685e578b446e98048" data-releasestage="staging" data-context='{"bid_request_id":"51w5309a-b3e7-679r-byua-09d9b92c42eq","exchange":"mopub","ad_external_id":"2e25c0304d4f013680d322000a88c94b","publisher_id":null,"country":"AFG"}'/></script><script type="text/javascript" src="mraid.js"></script>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="viewport" content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width, minimal-ui=1">
-<style type="text/css">
-    gr
-    html, body { height: 100%; }
-    body { margin: 0; background: #000; }
-    #page { height: 100%; display: flex; flex-direction: column; justify-content: center; }
-    #container { position: relative; height: 100%; }
-    #canvas { width: 100%; height: 100%; display: none; }
-    #loader { display: block; height: 100%; width: 100%; background: #000000; }
-    #loader img{ display: block; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0;}
+<script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" data-apikey="99ada7ad37e1fc1458ecc02195b84172" data-releasestage="staging" data-context='{"bid_request_id":"51w5309a-b3e7-079r-byua-09d9b92c42eq","exchange":"mopub","ad_external_id":"fe5c178020780136b19d22000a88c94b","publisher_id":null,"country":"AFG"}'/></script><head>
+  <script src="mraid.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  #close{
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 32px;
+    padding: 2px;
+    margin: 10px;
+  }
+  #close:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 0;
+    border-top: 1.5px solid rgba(0,0,0,0.4);
+    transform: rotate(45deg);
+    transform-origin: center;
+  }
+  #close:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 0;
+    border-top: 1.5px solid rgba(0,0,0,0.4);
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .bg-color--dark {background-color: #000000;}
+  img {max-width: 100%;height: auto;}
+  #no-mraid {display: none;}
 </style>
-<div style="display: none;"><button type="button" id="button"></button></div>
-<div id="click-url" x-click-url="http://clicks-staging.fiksu.com/api/9/B-3pYNpKbznHPdx1qMA9Uw/gCO-0D6OuxdtJuzPlAhZxdmVUZfmPXcaShTvW_F5dhK9sf_53WfzCKJy-K78BrsXW_t7AnX5xHdLr2Ajmw_4CJHqYb4Na4McNwaMnXRqsKOxdrvgUJdOB1yrNj5gtZ2nY9F72xN3phUakJDF-J1yla37GDxsGDguxZ60uf5wubTIB5YNVO290kHMILMmGbzuRkureEAM48wFkQC6j0-AKMx14Q34wwuyXg0n52oMoWZ5cPypgzJB2hICmNrmAA3HNfS0C5EUCX04AGym-BrlF9kP9M8nYSHohBeMcPzbnEshgBVvUFp7zfqK6Z2qZXnPTSZgSwwgoXK4zK_BF800scwuShWEucLW31Wm2Qh5NrbWkXJSdIVb1hl7tDhvZr7yLnA2HENk63xioeif5JfAk9yFb6z7NsmDe0da5XeeVucuEO406ZNILf-NFRMXvuraaq4X6nUo6_6G5It36jfyhJjqt1cBi6NUnPx5t63dXQFNfgIionuLtXBARh7qUjYJdcXk_LmalvyHCCfFT6YKjZk5WrEmR69f7FJBpuG3ZttbnPZyjn1YtHKijGLciC161v1O7Vgfp0bOLWuqShI21avudY9W_57AzSvEMBg5gapgiDxIAjeNHspaz5qAAVegUY6-DDUpB-k_isAq4gWfMw/"></div>
-<div id="asset-base-url" x-asset-base-url="http://rtb-creatives.fiksu.com/staging/a/e0e407b04d4c013680cc22000a88c94b/"></div>
-<div id="async-click-url" x-click-url="http://clicks-staging.fiksu.com/api/9/_R_VdIdjiwrtd9lJNOVGAA/MHQLvWOTuarPualdhAapW4o637B3oJe6HAZOW1KDc8-uAPLGWHp3WoKj-H2IRPN_iVQoEvpOpXM9ScL3t38iGJrxwA5VBnJlKSTGNLOvxPjwk3cYMNSoohLoeWpwWna7-slzFLObIztXIA8PZl8eTiDCP8LKLzbdeS0x7bUfwy-apG-PslfxpIGWChcCvG81l2n_UxdXbt5nI03AcyZ7emDT7HWgweizu8EspV0mzQ_y5js54KC53Usy3TnkzJQHXSCHLZkHTnK_ALJH-clnuywnjjL7ftb259rMbQGGf4ZAqncHhuq2ZIQ27RTlabf4vnsNMNQ_Jk_X3PXFQWXLChEJKZM_MvzON1xdtllEa56CSzSPG5iNlxFFqeGdgb5y-25JIqCiGcZLZU7FOYnxqnbdzg4Hil8Ur2eiNFeLhq6eOIcVxcCvJvf4im36-W-jIFzmSkaYBsSohpjHfF5u9SPFlkZqNAKRlnbFP20f20t-ijNEIz1NJXBxWgy10TDDopDDNBFIXje_QFIxbWCsYcS6YcrCf8laH4_49E7xANFMw21c_cav9U0CZol_SWfRmfuCs7MyTqKuCYA9_A6erJ76wvC5EkPxgrfjoBNFpCunGXP0MCQpsdgHtJSwseJKHIyV2D87SAvHs67j2nRAmA/"></div>
-<div id="app-id" x-app-id="id1133138987"></div>
-<span id="loader"><img id="static-image" src=""/></span>
-<div id="page"><div id="container"><div id="canvas"></div></div></div>
-<script>
-  var sources = [ "phaser.min.js", "build.js" ];
-  var assetBaseUrl = document.getElementById("asset-base-url").getAttribute("x-asset-base-url");
-  if (assetBaseUrl[0] == "%") { assetBaseUrl = ""; }
-  var image = document.getElementById("static-image");
-  var imagesrc = image.getAttribute("src");
-  imagesrc = assetBaseUrl + "assets/logo.gif";
-  image.src = imagesrc;
-   for (var idx in sources) {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = assetBaseUrl + "assets/" + sources[idx] + "?id=9786875";
-        document.head.appendChild(script);
+</head>
+<body>
+  <div style="display: none;">
+    <button type="button" id="button"></button>
+  </div>
+  <div id="close"></div>
+  <div id="adContainer" class="center bg-color--dark">
+    <div id="container">
+      <!-- img tag should contain landscape image url for no mraid case -->
+      <img id="no-mraid" onclick="openSite();" src="http://rtb-creatives.fiksu.com/production/m/EraSlots_Bustet_gb_480_320.gif" />
+      <picture id="main-picture" onclick="openSite();">
+        <source srcset="http://rtb-creatives.fiksu.com/production/m/EraSlots_Bustet_gb_480_320.gif"
+            media="(min-width: 568px) and (orientation: landscape)" />
+        <source srcset="http://rtb-creatives.fiksu.com/production/m/EraSlots_Bustet_gb_320_480.gif 0.5x"
+            media="(min-width: 320px) and (orientation: portrait)" />
+        <source srcset="http://rtb-creatives.fiksu.com/production/m/EraSlots_Bustet_gb_480_320.gif 0.5x"
+            media="(min-width: 480px) and (orientation: landscape)" />
+        <img src="" />
+      </picture>
+    </div>
+  </div>
+  <script>
+      mraisd
+    var link = "http://clicks-staging.fiksu.com/api/9/CD0CqGRgvCQgkdU8uCAVkw/a-RvlBTacPpk1fmrIFYc-xadcBjhknK7LGD0l1pm021NraIC8yIozmaYtHI6zHZXd0dITElZz_GWX2u0qHjj6lsGUn4pFQ-MBSfS2K8qjp5HxQKc0Hkqfa-mh-mrftswX4Xoo0hlUZCzrFpkYeVeZjOKL5EcPeZQXZ81pg-JyplGt1u7RrWf9OrcAa1Ldf75XLadOiB8hysWzmfU-6w-hEPAjVXyT475ZpS8GdReU9ryg9BakICKGQxQzFK3-XZ2czK80C5N9yqHP2CexgkrHO34DEa9D0E-I1QzuH5MqVPfv95OI3Q62j4W9AJsYNnFb4ROcYOhq09BNzUdVZAbyERwD7ClgKuXQ-jhz3ghHIRIHFNToifrQRFWJw2fuOCPVBepBNrjttmzpQUtO3Fq5VDP-mjwy9pR-spuJHwCwUV3ywClTQsKRrto0fnzHgFIBClR1vSZiXodmDIeXXqzoubH7PI0hb9qwKYB6LEVm5JptnBmVCGKzkCMj_BF1Kql97cJ_LEwS7PPWp41tnGNUfrCsCPB6Xw6qtGNlWteg41YiahOePKdfPplIAhvGL3wC4BdRWZ6IpU7Eys6VeFtfSuUytWoJQTTmXsA5y3eT64NxFvjdd66DkVT-ZiKh9FM/";
+    var soundSrc = 'http://rtb-creatives.fiksu.com/production/m/EraSlots_AnubisBustet_12s.wav';
+    var sound = new Audio(soundSrc);
+    var flagClicked = 0;
+    function isMraid() {
+      return typeof mraid !== 'undefined'
     }
+    function openSite () {
+      flagClicked = 2;
+      sound.pause();
+      if(isMraid()) {
+        mraid.open(link);
+      } else {
+        window.open(link);
+      }
+    }
+    function initAudio () {
+      var counter = 0;
+      var PLAY_TIMES = 2;
+      sound.preload = 'auto';
+      sound.addEventListener('ended', function () {
+        if (++counter === PLAY_TIMES) {
+          this.pause();
+        } else {
+          this.play();
+        }
+      });
+    }
+    function onManuallyTouch () {
+      initAudio();
+      sound.play();
+    }
+    function onOrientationChange () {
+      if(flagClicked>=1){
+        sound.pause();
+      } else {
+        sound.currentTime = 0;
+        flagClicked++;
+      }
+    }
+    function emitTouchEvent (type, element, x, y) {
+      var event = document.createEvent('Event'),
+      touch = {pageX: x, pageY: y, target: element};
+      event.initEvent('touch' + type, true, true);
+      event.touches = [touch];
+      element.dispatchEvent(event);
+    }
+    function startAudio() {
+      var button = document.querySelector('#button');
+      button.addEventListener('touchend', onManuallyTouch, false);
+      window.addEventListener('orientationchange', onOrientationChange);
+      emitTouchEvent('end', button, 10, 10);
+    }
+    function setupViewport () {
+      var element = document.querySelector('meta[name=viewport]');
+      if (!element) {
+        element = document.createElement('meta');
+        element.name = 'viewport';
+        element.content = 'width=' + 'device-width' + ', initial-scale=1.0' + ', user-scalable=no';
+        document.getElementsByTagName('head')[0].appendChild(element);
+      } else {
+        element.content = 'width=' + 'device-width' + ', user-scalable=no';
+      }
+    }
+    setupViewport();
+  if (!isMraid()) {
+    startAudio();
+    if (window.orientation == 90 || window.orientation == -90) { 
+        document.getElementById("main-picture").style.display = "none";
+        var noMraidImage = document.getElementById("no-mraid");
+        noMraidImage.style.display = "block";
+        noMraidImage.style.transform = "rotate(" + window.orientation + "deg)";
+    }
+  } else {
+    mraid.addEventListener("viewableChange", playPause); 
+    function playPause() {
+      sound.pause();
+    } 
+    function mraidIsReady () {
+      mraid.removeEventListener('ready', mraidIsReady);
+      prepareMyAd();
+    }
+    function prepareMyAd () {
+      if (!mraid.isViewable()) {
+        mraid.addEventListener('viewableChange', isInterstitialDisplayed);
+      } else {
+        showMyAd();
+      }
+    }
+    function isInterstitialDisplayed (displayed) {
+      if (displayed) {
+        mraid.removeEventListener('viewableChange', isInterstitialDisplayed);
+        showMyAd();
+      }
+    }
+    function showMyAd () {
+      mraid.useCustomClose(true);
+      document.getElementById('close').addEventListener('click', function() {
+        mraid.close();
+      });
+      startAudio();
+    }
+    function doReadyCheck () {
+      if (mraid.getState() == 'loading') {
+        mraid.addEventListener('ready', mraidIsReady);
+      } else {
+        prepareMyAd();
+      }
+    }
+    doReadyCheck();
+  }
 </script>
+</body>
